@@ -14,7 +14,7 @@ function Login(props) {
         <BgImage />
       </Content>
     </Container>
-  )
+  );
 }
 
 const Container = styled.section`
