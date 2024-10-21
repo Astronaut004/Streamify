@@ -9,7 +9,23 @@ function Header(props) {
             <NavMenu>
                 <a href="/home">
                     <img src="/images/home-icon.svg" alt="" />
-                    <span>Home</span>
+                    <span>HOME</span>
+                </a>
+                <a href="/search">
+                    <img src="/images/search-icon.svg" alt="" />
+                    <span>SEARCH</span>
+                </a>
+                <a href="/watchlist">
+                    <img src="/images/watchlist-icon.svg" alt="" />
+                    <span>WATCHLIST</span>
+                </a>
+                <a href="/movies">
+                    <img src="/images/movie-icon.svg" alt="" />
+                    <span>MOVIES</span>
+                </a>
+                <a href="/series">
+                    <img src="/images/series-icon.svg" alt="" />
+                    <span>SERIES</span>
                 </a>
             </NavMenu>
         </Nav>
