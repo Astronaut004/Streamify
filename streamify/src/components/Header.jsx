@@ -7,6 +7,7 @@ import { auth } from '../firebase';
 import {
     selectUserName,
     selectUserPhoto,
+    setSignOutState,
     setUserLoginDetails
 } from "../feature/user/userSlice";
 import { useEffect } from 'react';
@@ -32,15 +33,26 @@ function Header(props) {
 
 
     const handleAuth = () => {
-        signIn()
-
-            .then((result) => {
-                setUser(result.user);
-            }).catch((error) => {
-                alert(error.message);
-            });
-
+        if (!username) {
+            signIn()
+                .then((result) => {
+                    setUser(result.user);
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        } else {
+            auth.signOut()
+                .then(() => {
+                    dispatch(setSignOutState());
+                    navigate('/');
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        }
     };
+    
 
     const setUser = (user) => {
         dispatch(
